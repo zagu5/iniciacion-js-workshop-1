@@ -43,11 +43,11 @@ for (let i = 0; i < allBtn.length; i++) {
 
         if(element.textContent == 'C'){
             logEl.innerText = '';
-            logArr.length = 1;
+            logArr.length = 0;
             aux = '';
+            resultEl.value = 0;
         }else if (element.textContent == '='){
             logArr.push(aux)
-            aux = '';
 
             let total = parseInt(logArr[0]);
             for(let i=1; i<logArr.length; i+=2){
@@ -63,7 +63,7 @@ for (let i = 0; i < allBtn.length; i++) {
                     total = restar(total,b)
                 }else if (op == 'x'){
                     total = multiplicar(total,b)
-                }else if (op == '%'){
+                }else if (op == '÷'){
                     total = dividir(total,b)
                 }
             }
@@ -72,7 +72,7 @@ for (let i = 0; i < allBtn.length; i++) {
             aux = '';
 
             if(isNaN(total)){
-                resultEl.value = 'Error'
+                resultEl.value = 'Error';
             }else {
                 resultEl.value = total;
             }
